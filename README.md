@@ -16,7 +16,8 @@ var require = {
 <script data-main="cs!app/main" src="//static.abc.com/j/pub/require/2.1.14.js"></script>
 ```
 app/main.coffee
-```javascript
+```coffeecript
+# a coffee package
 require [
   'cs!common/baseModel'
 ], ->
