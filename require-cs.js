@@ -5,7 +5,6 @@
 
 define(['http://coffeescript.org/extras/coffee-script.js'],function(coffee){
 	var isXDR
-	// 简易ajax loader
 	var progIds = ['Msxml2.XMLHTTP','Microsoft.XMLHTTP','Msxml2.XMLHTTP.4.0']
 	var getXhr = function(){
 		if(typeof window.XDomainRequest !== 'undefined'){
@@ -26,7 +25,6 @@ define(['http://coffeescript.org/extras/coffee-script.js'],function(coffee){
 		}
 	}
 
-	// 获取文件
 	var fetchText = function(url, callback){
 		var xhr = getXhr()
 		xhr.open('GET', url, true)
@@ -46,7 +44,6 @@ define(['http://coffeescript.org/extras/coffee-script.js'],function(coffee){
 
 	return {
 		load: function(name, req, load, config){
-			// 处理coffee
 			var path = req.toUrl(~name.search(/\.(coffee)$/)?name:name+'.coffee')
 			fetchText(path, function(text){
 				// 如果不2次setTimeout，IE会abort
@@ -60,7 +57,6 @@ define(['http://coffeescript.org/extras/coffee-script.js'],function(coffee){
 					text += '\r\n//@ sourceURL=' + path
 					setTimeout(function(){
 						load.fromText(name, text)
-						// 返回结果
 						req([name], function(content){
 							load(content)
 						})
