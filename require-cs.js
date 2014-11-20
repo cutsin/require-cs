@@ -1,8 +1,6 @@
 /*
- * 前端加载、编译CoffeeScript，修改自jrburke的require-cs
+ * 前端加载、编译CoffeeScript，修改自jrburke的require-cs@0.4.3
  * 删除require-cs的node部分，修改了一些bug
- * version: 0.4.3.hack
- * hacked by cutsin@gmail.com
 */
 
 define(['http://coffeescript.org/extras/coffee-script.js'],function(coffee){
